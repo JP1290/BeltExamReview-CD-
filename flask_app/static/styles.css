@@ -1,0 +1,24 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+table{
+    border-collapse:collapse;
+    border: 1px solid;
+}
+
+td{
+    padding: 15px 15px 15px 0;
+    border-left: 1px solid;
+}
+
+th{
+    padding-right: 15px;
+    border: 1px solid;
+    background-color:rgb(130, 130, 130);
+}
+
+tr:nth-child(odd){
+    background-color:rgb(233, 233, 233);
+}

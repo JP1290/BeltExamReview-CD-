@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Recipe</title>
+    <link rel = "stylesheet" type = "text/css" href = "../static/styles.css">
+</head>
+<body>
+    
+    <div>
+
+        <h2> Edit Recipe! </h2>
+
+        <a href = "/recipes"> back to recipes </a>
+
+        <a href = "/clear"> logout </a>
+
+        {% with messages = get_flashed_messages() %}
+
+            {% if messages %}
+
+                {% for message in messages %}
+
+                    <p>{{message}}</p>
+
+                {% endfor %}
+
+            {% endif %}
+
+        {% endwith %}
+
+        <form action = "/edit" method = "post">
+
+            <div>
+
+                <label for = "name"> Name </label>
+
+                <input type = "text" name = "name" value = "{{recipes[0].name}}">
+
+                <label for = "description"> Description </label>
+
+                <input type = "textarea" name = "description" value = "{{recipes[0].description}}">
+
+                <label for = "instruction"> Instructions </label>
+
+                <input type = "textarea" name = "instruction" value = "{{recipes[0].instruction}}">
+
+            </div>
+
+            <div>
+
+                <label for = "date_cooked"> Date Cooked/Made </label>
+
+                <input type = "date" name = "date_cooked" value = "{{recipes[0].date_cooked}}">
+
+                <label for = "thirty_minutes"> Under 30 Minutes? </label name = "thirty_minutes">
+
+                <input type = "radio" value = "1" name = "thirty_minutes">
+
+                <label for = "Yes"> Yes </label name = "thirty_minutes">
+
+                <input type = "radio" value = "2" name = "thirty_minutes">
+
+                <label for = "No"> No </label name ="thirty_minutes">
+
+                <input type = "hidden" value = "" name = "thirty_minutes">
+
+            </div>
+
+            <input type = "submit" value = "Submit">
+
+        </form>
+
+    </div>
+
+</body>
+</html>

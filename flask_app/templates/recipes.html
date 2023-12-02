@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe</title>
+    <link rel = "stylesheet" type = "text/css" href = "../static/styles.css">
+</head>
+<body>
+    
+    <div>
+
+        <div>
+
+            <h2> Welcome, {{first_name}} </h2>
+
+            <a href = "/recipes" > back to recipes </a>
+
+            <a href = "/clear" > logout </a>
+
+        </div>
+
+        <div>
+
+            <h2> {{recipes[0].name}} </h2>
+
+            <h6> Posted by: {{recipes[0].posted_by[0].first_name}} </h6>
+
+        </div>
+
+        <div>
+
+            <div>
+
+                <p> Description: </p>
+
+                <p> {{recipes[0].description}} </p>
+
+            </div>
+
+            <div>
+
+                <p> Under 30 Minutes? </p>
+
+                {% if recipes[0].thirty_minutes == 1 %}
+
+                <p> Yes </p>
+
+                {% else %}
+
+                <p> No </p>
+
+                {% endif %}
+
+            </div>
+
+            <div>
+
+                <p> Instructions: </p>
+
+                <p> {{recipes[0].instruction}} </p>
+
+            </div>
+
+            <div>
+
+                <p> Date Made: </p>
+
+                <p> {{recipes[0].date_cooked}} </p>
+
+            </div>
+            
+        </div>
+
+    </div>
+
+</body>
+</html>

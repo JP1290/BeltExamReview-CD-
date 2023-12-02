@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register and Login</title>
+    <link rel = "stylesheet" type = "text/css" href = "../static/styles.css">
+</head>
+<body>
+
+    <h2> Recipe Share </h2>
+
+    <div class = "container">
+
+        <h2> Register </h2>
+
+        <form action = "/register" method = "post">
+
+            {% with messages = get_flashed_messages(category_filter=['register']) %}
+
+                {% if messages %}
+
+                    {% for message in messages %}
+
+                        <p>{{message}}</p>
+
+                    {% endfor %}
+
+                {% endif %}
+
+            {% endwith %}
+
+                <label for = "first_name"> First Name: </label>
+
+                <input type = "text" name = "first_name">
+
+                <label for = "last_name"> Last Name: </label>
+
+                <input type = "text" name = "last_name">
+
+                <label for = "email"> Email: </label>
+
+                <input type = "email" name = "email">
+
+                <label for = "password"> Password: </label>
+
+                <input type = "password" name = "password">
+
+                <label for = "confirm_password"> Confirm Password: </label>
+
+                <input type = "password" name = "confirm_password">
+
+                <input class = "button" type = "submit" value = "Submit">
+
+            </form>
+
+        </div>
+
+        <div class = "login">
+
+            <h2> Login </h2>
+
+            <form action = "/login" method = "post">
+
+            {% with messages = get_flashed_messages(category_filter=['login']) %}
+
+                {% if messages %}
+
+                    {% for message in messages %}
+
+                        <p>{{message}}</p>
+
+                    {% endfor %}
+
+                {% endif %}
+
+            {% endwith %}
+
+                <label for = "email"> Email: </label>
+
+                <input type = "text" name = "email">
+
+                <label for = "password"> Password: </label>
+
+                <input type = "password" name = "password">
+
+                <input class = "loginbutton" type = "submit" value = "Submit">
+
+            </form>
+
+        </div>
+
+    </div>
+    </div>
+
+</body>
+</html>
